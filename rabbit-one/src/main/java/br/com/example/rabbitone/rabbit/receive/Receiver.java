@@ -1,8 +1,13 @@
 package br.com.example.rabbitone.rabbit.receive;
 
-import java.util.concurrent.CountDownLatch;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.CountDownLatch;
+
+/**
+ *  This class no longer usable. See {@link RabbitReceiver}
+ */
+@Deprecated
 @Component
 public class Receiver {
 

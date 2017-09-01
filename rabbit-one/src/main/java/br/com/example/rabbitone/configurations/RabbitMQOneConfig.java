@@ -1,6 +1,6 @@
 package br.com.example.rabbitone.configurations;
 
-import br.com.example.rabbitone.rabbit.receive.Receiver;
+import br.com.example.rabbitone.rabbit.receive.RabbitReceiver;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
@@ -56,8 +56,8 @@ public class RabbitMQOneConfig {
     }
 
     @Bean
-    MessageListenerAdapter listenerAdapter(Receiver receiver) {
-        return new MessageListenerAdapter(receiver, "receiveMessage");
+    MessageListenerAdapter listenerAdapter() {
+        return new MessageListenerAdapter(new RabbitReceiver());
     }
 
     @Bean
